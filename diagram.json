@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -13.2,
+      "left": 339.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -13.2,
+      "left": 407,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -13.2,
+      "left": 474.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -214.4,
+      "left": 120.8,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -201.3, "left": -216.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 62.4,
+      "left": 335.45,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 62.4,
+      "left": 402.65,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 62.4,
+      "left": 479.45,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "red", [ "v374.4", "h364.8" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "green", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "green", [ "h0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-144", "v403.3", "h172.8" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [ "led3:C", "uno:GND.1", "green", [ "v0", "h-9.2", "v-86.4", "h-364.8" ] ],
+    [ "led2:C", "uno:GND.1", "green", [ "v0", "h-28.4", "v-76.8", "h-278.4" ] ],
+    [ "led1:C", "uno:GND.1", "green", [ "v0", "h-57.2", "v-67.2", "h-182.4" ] ],
+    [ "r1:1", "led1:A", "green", [ "h0" ] ],
+    [ "r2:1", "led2:A", "green", [ "h0" ] ],
+    [ "r3:1", "led3:A", "green", [ "h0" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v76.8", "h288" ] ],
+    [ "dht1:SDA", "uno:8", "green", [ "v57.6", "h364.9" ] ],
+    [ "r1:2", "uno:13", "green", [ "h-38.4", "v-126", "h-182.4", "v9.6" ] ],
+    [ "r2:2", "uno:12", "green", [ "h-9.6", "v8.4", "h-115.2", "v-124.8", "h-163.2" ] ],
+    [ "r3:2", "uno:11", "green", [ "h-48", "v27.6", "h-163.2", "v-134.4", "h-153.6" ] ]
+  ],
+  "dependencies": {}
+}
